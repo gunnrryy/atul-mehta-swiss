@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switzerland Trip Presentation - Vacation Vibes LLP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #FDFBF8; /* Warm off-white */
+            color: #333333;
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .slide-container {
+            min-height: 100vh; /* Each slide takes at least full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 2rem;
+            box-sizing: border-box;
+            border-bottom: 1px solid #e0e0e0; /* Separator between slides */
+            position: relative;
+        }
+        .slide-content {
+            max-width: 1000px; /* Max width for content */
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2rem 3rem;
+            text-align: center;
+            position: relative;
+        }
+        .slide-content h2 {
+            color: #065f46; /* Deep forest green */
+            margin-bottom: 1.5rem;
+        }
+        .slide-content h3 {
+            color: #10b981; /* Emerald green */
+            margin-bottom: 1rem;
+        }
+        .slide-content ul {
+            list-style: none; /* Remove default bullet */
+            padding-left: 0;
+        }
+        .slide-content ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+        .slide-content ul li::before {
+            content: '•'; /* Custom bullet */
+            position: absolute;
+            left: 0;
+            color: #a7f3d0; /* Light emerald */
+            font-weight: bold;
+        }
+        .slide-logo {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            height: 4rem;
+            width: 4rem;
+            object-fit: contain;
+        }
+        .slide-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Welcome Slide -->
+    <section class="slide-container bg-emerald-800 text-white">
+        <div class="slide-content bg-white bg-opacity-95 text-gray-800 p-8 md:p-12">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h1 class="text-5xl font-bold font-display mb-4 text-emerald-800">A Grand Swiss Escape</h1>
+            <p class="text-xl md:text-2xl font-light mb-8 text-gray-700">An exclusive journey curated for</p>
+            <h2 class="text-4xl md:text-5xl font-bold font-display mb-8 text-amber-600">Atul Mehta & Group!</h2>
+            <p class="text-lg text-gray-600">We are thrilled to present a meticulously crafted journey designed especially for you. Prepare to discover the unparalleled beauty and luxury of Switzerland with Vacation Vibes LLP.</p>
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/25July.jpg?raw=true" alt="Scenic Swiss Landscape" class="slide-image">
+        </div>
+    </section>
+
+    <!-- Slide 1: Trip Highlights at a Glance -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Trip Highlights at a Glance</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <div>
+                    <h3 class="text-2xl font-semibold">Vibrant Swiss Journey</h3>
+                    <p class="text-gray-700">Explore Zurich, Montreux, Zermatt, St Moritz, Interlaken & Lucerne in full color.</p>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/swiss_panorama.jpg?raw=true" alt="Breathtaking panoramic shot of the Swiss Alps" class="slide-image">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold">Handpicked Luxury Stays</h3>
+                    <p class="text-gray-700">Stay in scenic hotels with lakeside and mountain views.</p>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/luxury_hotel.jpg?raw=true" alt="Inviting exterior shot of a luxury hotel" class="slide-image">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold">Seamless Transfers</h3>
+                    <p class="text-gray-700">Private vans, scenic train rides & local sightseeing, stress-free.</p>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/glacier_express.jpm?raw=true" alt="Shot of the Glacier Express train" class="slide-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2: Trip Overview & Accommodation -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Trip Overview & Accommodation</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+                <div>
+                    <h3 class="text-2xl font-semibold">Destinations</h3>
+                    <ul class="list-disc ml-6 text-gray-700">
+                        <li>Zurich, Montreux, Zermatt, St Moritz, Interlaken, Lucerne – cities, lakes & alpine villages.</li>
+                    </ul>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/swiss_map.jpg?raw=true" alt="Illustrated map of Switzerland" class="slide-image">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold">Premium Hotels</h3>
+                    <ul class="list-disc ml-6 text-gray-700">
+                        <li>Radisson Zurich, Royal Plaza Montreux, Naco Aparthotel Zermatt, Laudinella St Moritz, Beau Rivage Interlaken, Radisson Blu Lucerne.</li>
+                    </ul>
+                    <h3 class="text-2xl font-semibold mt-4">Private Transfers</h3>
+                    <ul class="list-disc ml-6 text-gray-700">
+                        <li>Smooth van services, scenic Glacier Express, local sightseeing trips.</li>
+                    </ul>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/van.jpg?raw=true" alt="Pristine private van" class="slide-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Day 1 - 25-July -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Day 1 - 25-July: Welcome to Switzerland</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+                <div>
+                    <h3 class="text-2xl font-semibold">Smooth Arrival</h3>
+                    <p class="text-gray-700">Private van pick-up from Zurich Airport to Radisson Hotel & Suites Zurich.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Bahnhofstrasse & Promenade</h3>
+                    <p class="text-gray-700">Relax and stroll Zurich’s luxury shopping street; optional Lake Zurich walk.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Indian Dinner Options</h3>
+                    <p class="text-gray-700">Dine at Khana Khazana, Tamarind Hill, or New Bombay with convenient transfer.</p>
+                </div>
+                <div>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/arrive.jpg?raw=true" alt="Zurich Cityscape" class="slide-image w-full" onerror="this.src='https://placehold.co/500x300/cccccc/000000?text=Zurich+Arrival'; this.onerror=null;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Day 2 - 26-July -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Day 2 - 26-July: Zurich to Montreux</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+                <div>
+                    <h3 class="text-2xl font-semibold">Lindt Home of Chocolate</h3>
+                    <p class="text-gray-700">Visit interactive chocolate museum & tasting session.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Glacier 3000 Cable Car</h3>
+                    <p class="text-gray-700">Ride up for Peak Walk & breathtaking glacier views.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Gstaad Village Stroll</h3>
+                    <p class="text-gray-700">Explore luxury chalets, cafes; stop at Saanen village for photos.</p>
+                </div>
+                <div>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/lindt.jpg?raw=true" alt="Lindt Chocolate and Glacier" class="slide-image w-full" onerror="this.src='https://placehold.co/500x300/cccccc/000000?text=Chocolate+Glacier'; this.onerror=null;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Day 3 - 27-July -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Day 3 - 27-July: Lakeside & City Highlights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+                <div>
+                    <h3 class="text-2xl font-semibold">Montreux Promenade</h3>
+                    <p class="text-gray-700">Morning lakeside walk & Freddie Mercury Statue photo stop.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Geneva City Tour</h3>
+                    <p class="text-gray-700">Visit Jet d’Eau Fountain, Flower Clock, Old Town, UN Headquarters.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Dinner Options</h3>
+                    <p class="text-gray-700">Return to Montreux for dinner or dine at top Indian restaurants in Geneva.</p>
+                </div>
+                <div>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/lakeside_city.jpg?raw=true" alt="Montreux and Geneva" class="slide-image w-full" onerror="this.src='https://placehold.co/500x300/cccccc/000000?text=Lakeside+City'; this.onerror=null;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: Day 4 - 28-July -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Day 4 - 28-July: Montreux to Zermatt</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+                <div>
+                    <h3 class="text-2xl font-semibold">Scenic Drive</h3>
+                    <p class="text-gray-700">Drive to Tasch village and take the shuttle train or electric taxi to Zermatt.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Zermatt Village</h3>
+                    <p class="text-gray-700">Explore car-free Zermatt: Bahnhofstrasse street, Old Village, Matterhorn Museum.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Dinner Options</h3>
+                    <p class="text-gray-700">GoldenIndia Zermatt or Snowboat Café for Indian-style dishes.</p>
+                </div>
+                <div>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/zermatt1.jpg?raw=true" alt="Zermatt Village" class="slide-image w-full" onerror="this.src='https://placehold.co/500x300/cccccc/000000?text=Zermatt+Village'; this.onerror=null;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Day 5 - 29-July -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Day 5 - 29-July: Zermatt to Matterhorn</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+                <div>
+                    <h3 class="text-2xl font-semibold">Matterhorn Glacier Paradise</h3>
+                    <p class="text-gray-700">Ride Europe’s highest cable car, explore Glacier Palace and ice caves.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Optional Gornergrat Railway</h3>
+                    <p class="text-gray-700">Take the scenic train for panoramic Matterhorn views.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Zermatt Village</h3>
+                    <p class="text-gray-700">Evening stroll and shopping along Bahnhofstrasse.</p>
+                </div>
+                <div>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/matterhorn.jpg?raw=true" alt="Matterhorn Glacier Paradise" class="slide-image w-full" onerror="this.src='https://placehold.co/500x300/cccccc/000000?text=Matterhorn+Glacier'; this.onerror=null;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: Day 6 - 30-July -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Day 6 - 30-July: Glacier Express | Chur | St Moritz</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+                <div>
+                    <h3 class="text-2xl font-semibold">Glacier Express</h3>
+                    <p class="text-gray-700">Board the world-famous panoramic train from Zermatt to Chur.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Vaduz Stopover</h3>
+                    <p class="text-gray-700">Short photo stop in Vaduz, Liechtenstein, with castle views.</p>
+                    <h3 class="text-2xl font-semibold mt-4">St Moritz Arrival</h3>
+                    <p class="text-gray-700">Check in at Hotel Laudinella; optional Lake St Moritz walk.</p>
+                </div>
+                <div>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/30July.png?raw=true" alt="Glacier Express" class="slide-image w-full" onerror="this.src='https://placehold.co/500x300/cccccc/000000?text=Glacier+Express'; this.onerror=null;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 9: Day 7 - 31-July -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Day 7 - 31-July: St Moritz | Italian Border Day Trip</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+                <div>
+                    <h3 class="text-2xl font-semibold">Livigno, Italy</h3>
+                    <p class="text-gray-700">Optional day trip for duty-free shopping and beautiful alpine drive.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Bernina Pass</h3>
+                    <p class="text-gray-700">Explore scenic spots along Bernina Pass with panoramic views.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Muottas Muragl Funicular</h3>
+                    <p class="text-gray-700">Take the funicular for sunset over St Moritz and Engadin Valley.</p>
+                </div>
+                <div>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/31July.png?raw=true" alt="Livigno, Italy" class="slide-image w-full" onerror="this.src='https://placehold.co/500x300/cccccc/000000?text=Livigno+Italy'; this.onerror=null;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 10: Day 8 - 1-August -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Day 8 - 1-August: St Moritz → Interlaken</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+                <div>
+                    <h3 class="text-2xl font-semibold">Scenic Transfer</h3>
+                    <p class="text-gray-700">Long but beautiful drive through alpine villages and valleys.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Sightseeing Stops</h3>
+                    <p class="text-gray-700">Pause for photos in charming mountain villages en route.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Interlaken Check-In</h3>
+                    <p class="text-gray-700">Arrive at Grand Hotel Beau Rivage; evening at leisure.</p>
+                </div>
+                <div>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/interlaken_drive.jpg?raw=true" alt="Interlaken Drive" class="slide-image w-full" onerror="this.src='https://placehold.co/500x300/cccccc/000000?text=Interlaken+Drive'; this.onerror=null;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 11: Day 9 - 2-August -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Day 9 - 2-August: Jungfrau & Harder Kulm</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+                <div>
+                    <h3 class="text-2xl font-semibold">Jungfraujoch – Top of Europe</h3>
+                    <p class="text-gray-700">Train ride to Jungfraujoch via Kleine Scheidegg; visit Sphinx Observatory & Ice Palace.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Harder Kulm</h3>
+                    <p class="text-gray-700">Evening funicular to Harder Kulm for panoramic sunset views over Interlaken.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Dinner Options</h3>
+                    <p class="text-gray-700">Dine at local Indian restaurants back in Interlaken.</p>
+                </div>
+                <div>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/sunset.jpg?raw=true" alt="Jungfraujoch & Harder Kulm" class="slide-image w-full" onerror="this.src='https://placehold.co/500x300/cccccc/000000?text=Jungfraujoch+Sunset'; this.onerror=null;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 12: Day 10 - 3-August -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Day 10 - 3-August: Lauterbrunnen - Wengen</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+                <div>
+                    <h3 class="text-2xl font-semibold">Staubbach Falls</h3>
+                    <p class="text-gray-700">Walk to Switzerland’s highest free-falling waterfall.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Trümmelbach Falls (Optional)</h3>
+                    <p class="text-gray-700">Explore unique waterfalls inside the mountain if open.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Wengen Village</h3>
+                    <p class="text-gray-700">Optional visit to the car-free alpine village by train or taxi.</p>
+                </div>
+                <div>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/3Aug.png?raw=true" alt="Lauterbrunnen Falls" class="slide-image w-full" onerror="this.src='https://placehold.co/500x300/cccccc/000000?text=Lauterbrunnen+Falls'; this.onerror=null;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 13: Day 11 - 4-August -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Day 11 - 4-August: Interlaken → Lucerne (via Mt Titlis)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+                <div>
+                    <h3 class="text-2xl font-semibold">Mt Titlis</h3>
+                    <p class="text-gray-700">Ride the Rotair cable car, explore Glacier Cave, Ice Flyer & Cliff Walk.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Lucerne Arrival</h3>
+                    <p class="text-gray-700">Stroll Lake Lucerne Promenade, see Chapel Bridge illuminated at night.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Check-In & Dinner</h3>
+                    <p class="text-gray-700">Check in at Radisson Blu Lucerne; dinner at top Indian restaurants.</p>
+                </div>
+                <div>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/4Aug.png?raw=true" alt="Mt Titlis & Lucerne" class="slide-image w-full" onerror="this.src='https://placehold.co/500x300/cccccc/000000?text=Mt+Titlis+Lucerne'; this.onerror=null;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 14: Day 12 - 5-August -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Day 12 - 5-August: Mt Pilatus & Lucerne</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+                <div>
+                    <h3 class="text-2xl font-semibold">Mt Pilatus Cogwheel</h3>
+                    <p class="text-gray-700">Ride the world’s steepest cogwheel railway with panoramic mountain views.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Lake Lucerne Cruise</h3>
+                    <p class="text-gray-700">Optional lake cruise with stunning alpine backdrops.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Lucerne Old Town</h3>
+                    <p class="text-gray-700">Explore Chapel Bridge, Lion Monument, and old town squares.</p>
+                </div>
+                <div>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/5Aug.png?raw=true" alt="Mt Pilatus & Lucerne" class="slide-image w-full" onerror="this.src='https://placehold.co/500x300/cccccc/000000?text=Mt+Pilatus+Lucerne'; this.onerror=null;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 15: Day 13 - 6-August -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Day 13 - 6-August: Departure from Switzerland</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+                <div>
+                    <h3 class="text-2xl font-semibold">Check-Out & Transfer</h3>
+                    <p class="text-gray-700">Private van transfer from Lucerne to Zurich Airport.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Last-Minute Shopping</h3>
+                    <p class="text-gray-700">Optional stop for souvenirs before heading to the airport.</p>
+                    <h3 class="text-2xl font-semibold mt-4">Fond Farewell</h3>
+                    <p class="text-gray-700">Goodbye from Vacation Vibes LLP – Travel Curators!</p>
+                </div>
+                <div>
+                    <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/happy_memories.png?raw=true" alt="Departure" class="slide-image w-full" onerror="this.src='https://placehold.co/500x300/cccccc/000000?text=Departure'; this.onerror=null;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Route Map Slide -->
+    <section class="slide-container">
+        <div class="slide-content">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display">Your Swiss Route</h2>
+            <p class="text-lg text-gray-700 mt-4">This map visually outlines your seamless journey, showcasing the efficient and scenic path we've curated across Switzerland.</p>
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/route.jpg?raw=true" alt="Switzerland Itinerary Route Map" class="slide-image w-full" onerror="this.src='https://placehold.co/800x600/cccccc/000000?text=Route+Map'; this.onerror=null;">
+        </div>
+    </section>
+
+    <!-- Thank You Slide -->
+    <section class="slide-container bg-emerald-800 text-white">
+        <div class="slide-content bg-white bg-opacity-95 text-gray-800 p-8 md:p-12">
+            <img src="https://github.com/gunnrryy/atul-mehta-swiss/blob/main/bird_edited.png?raw=true" alt="Vacation Vibes Logo" class="slide-logo" onerror="this.src='https://placehold.co/64x64/FDFBF8/065f46?text=VV'; this.onerror=null;">
+            <h2 class="text-4xl font-bold font-display text-emerald-800">Thank You for Your Time!</h2>
+            <p class="text-xl font-light mt-4 mb-8 text-gray-700">Ready to Book Your Dream Swiss Escape?</p>
+            <p class="text-lg text-gray-600 mb-6">We are excited to help you create unforgettable memories. Let's plan your next adventure!</p>
+            <div class="my-8">
+                <p class="text-2xl font-display text-amber-600">Zarna Shah, Founder</p>
+                <p class="text-lg text-gray-700">Vacation Vibes LLP - Travel Curators</p>
+                <p class="text-lg text-gray-700">Phone: (+91) 9930 888 727</p>
+                <p class="text-lg text-gray-700">Email: vvacationvibes@gmail.com </p>
+                <p class="text-lg text-gray-700">Website: www.vacationvibes.online/ </p>
+            </div>
+            <a href="#" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-full transition duration-300 text-lg shadow-lg">
+                Book Your Switzerland Trip Now!
+            </a>
+        </div>
+    </section>
+
+</body>
+</html>
