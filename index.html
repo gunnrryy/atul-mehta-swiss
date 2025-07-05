@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Switzerland Itinerary | Vacation Vibes LLP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #FDFBF8;
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1530982548995-9080ab6ce6e5?q=80&w=2670&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .timeline-item-content {
+            transition: all 0.5s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .timeline-item.active .timeline-item-content {
+            max-height: 1000px;
+        }
+        .timeline-item.active .arrow-down {
+            transform: rotate(180deg);
+        }
+        .chart-container { 
+            position: relative; 
+            width: 100%; 
+            max-width: 400px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            height: 300px;
+            max-height: 400px; 
+        }
+        @media (min-width: 768px) { 
+            .chart-container { 
+                height: 350px; 
+            } 
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="hero-bg text-white shadow-lg">
+        <div class="w-full h-screen flex flex-col justify-center items-center bg-black bg-opacity-50 p-4">
+            <div class="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-transparent z-10">
+                <div class="flex items-center space-x-2">
+                    <img src="https://drive.google.com/file/d/1y8NZMlCVBvh5_ZcjSWHZYIoSXIru51bM/view?usp=drive_link" alt="Vacation Vibes LLP Logo" class="h-12 w-12 object-contain" onerror="this.src='https://placehold.co/48x48/FDFBF8/065f46?text=VV'; this.onerror=null;">
+                    <span class="text-xl font-display">Vacation Vibes LLP</span>
+                </div>
+            </div>
+            <div class="text-center">
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-4">A Grand Swiss Escape</h1>
+                <p class="text-xl md:text-2xl font-light mb-8">An exclusive journey curated for<br><span class="font-display text-3xl md:text-4xl mt-2 block">Atul Mehta & Group</span></p>
+                <a href="#overview" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 text-lg">
+                    Explore Your Journey
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16 md:py-24">
+
+        <section id="overview" class="mb-20 md:mb-32 text-center">
+            <h2 class="text-4xl font-display mb-4 text-gray-900">Your Journey at a Glance</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12">This 13-day itinerary is a symphony of breathtaking landscapes, luxurious comfort, and unforgettable experiences, designed to create memories that will last a lifetime.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <div class="text-5xl font-bold text-emerald-800 mb-2">13</div>
+                    <div class="text-lg text-gray-600">Days of Discovery</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <div class="text-5xl font-bold text-emerald-800 mb-2">6</div>
+                    <div class="text-lg text-gray-600">Iconic Destinations</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <div class="text-5xl font-bold text-emerald-800 mb-2">5</div>
+                    <div class="text-lg text-gray-600">Majestic Mountain Peaks</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <div class="text-5xl font-bold text-emerald-800 mb-2">1</div>
+                    <div class="text-lg text-gray-600">Legendary Train Journey</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <h3 class="text-2xl font-display mb-4 text-center">Trip Experience Breakdown</h3>
+                    <div class="chart-container">
+                        <canvas id="tripDonutChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <h3 class="text-2xl font-display mb-4 text-center">Peak Heights Comparison</h3>
+                    <div class="chart-container h-80">
+                        <canvas id="peakBarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="itinerary" class="mb-20 md:mb-32">
+            <h2 class="text-4xl font-display mb-12 text-center text-gray-900">The Journey Unfolds</h2>
+            <div class="relative max-w-4xl mx-auto">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200" aria-hidden="true"></div>
+
+                <div id="timelineContainer" class="space-y-4">
+                </div>
+            </div>
+        </section>
+        
+        <section id="hotels" class="mb-20 md:mb-32">
+            <h2 class="text-4xl font-display mb-12 text-center text-gray-900">Your Handpicked Accommodations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+        </section>
+
+        <section id="booking" class="bg-emerald-800 text-white rounded-2xl p-8 md:p-16 text-center shadow-2xl">
+            <h2 class="text-4xl font-display mb-4">Your Swiss Adventure Awaits</h2>
+            <p class="text-lg font-light max-w-3xl mx-auto mb-8">We are passionate about crafting perfect travel experiences. Let us handle every detail while you immerse yourself in the magic of Switzerland. Contact us to confirm your booking and turn this dream itinerary into a reality.</p>
+            <div class="my-8">
+                <p class="text-2xl font-display">Zarna Shah, Founder</p>
+                <p class="text-amber-300">Vacation Vibes LLP - Your Travel Curators</p>
+            </div>
+            <a href="mailto:your-email@example.com" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-full transition duration-300 text-lg shadow-lg">
+                Book Your Trip Now
+            </a>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const commonChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#4A5568',
+                            font: {
+                                family: "'Roboto', sans-serif"
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                return Array.isArray(label) ? label.join(' ') : label;
+                            }
+                        }
+                    }
+                }
+            };
+            
+            new Chart(document.getElementById('tripDonutChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Mountain Excursions', 'City & Village Tours', 'Scenic Travel', 'Leisure & Dining'],
+                    datasets: [{
+                        data: [35, 30, 20, 15],
+                        backgroundColor: ['#065f46', '#10b981', '#6ee7b7', '#a7f3d0'],
+                        borderColor: '#FDFBF8',
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: { ...commonChartOptions }
+            });
+
+            const peakData = {
+                labels: ['Glacier 3000', 'Matterhorn Paradise', 'Jungfraujoch', 'Mt. Titlis', 'Mt. Pilatus'],
+                heights: [2971, 3883, 3454, 3238, 2128]
+            };
+            new Chart(document.getElementById('peakBarChart'), {
+                type: 'bar',
+                data: {
+                    labels: peakData.labels,
+                    datasets: [{
+                        label: 'Height (meters)',
+                        data: peakData.heights,
+                        backgroundColor: '#10b981',
+                        borderColor: '#065f46',
+                        borderWidth: 1,
+                        borderRadius: 4,
+                    }]
+                },
+                options: {
+                    ...commonChartOptions,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { color: '#4A5568' },
+                            grid: { color: '#E2E8F0' }
+                        },
+                        x: {
+                            ticks: { color: '#4A5568' },
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        ...commonChartOptions.plugins,
+                        legend: { display: false }
+                    }
+                }
+            });
+
+            const itineraryData = [
+                { day: 1, date: "25-July", title: "Welcome to Switzerland", details: "Arrive in Zurich, private transfer to Radisson Hotel. Stroll along Bahnhofstrasse and enjoy an optional Indian dinner.", image: "uploaded:25July.jpg-06040111-d123-4c74-b2ab-cc572f31ad50" },
+                { day: 2, date: "26-July", title: "Chocolate & Glaciers", details: "Visit Lindt Home of Chocolate, then ascend Glacier 3000 for the Peak Walk. Stroll through Gstaad village before reaching Montreux.", image: "uploaded:26July.jpg-eef0791d-5011-4618-92d9-2e1e55df1e01" },
+                { day: 3, date: "27-July", title: "Lakeside & City Highlights", details: "Morning walk in Montreux, see the Freddie Mercury statue. Afternoon tour of Geneva including Jet d’Eau and the Old Town.", image: "uploaded:27July.jpg-913d9eb2-c515-4174-918f-c93d76695e3c" },
+                { day: 4, "date": "28-July", "title": "Journey to Zermatt", "details": "Scenic drive to car-free Zermatt. Explore the charming village, Bahnhofstrasse, and enjoy Matterhorn views.", "image": "https://images.unsplash.com/photo-1613324634599-ce1234c264a2?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                { day: 5, "date": "29-July", "title": "Matterhorn Glacier Paradise", "details": "Ride Europe's highest cable car to Matterhorn Glacier Paradise. Explore the Glacier Palace and enjoy optional Gornergrat Railway trip.", "image": "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                { day: 6, "date": "30-July", "title": "Glacier Express to St. Moritz", "details": "Board the world-famous panoramic Glacier Express train. Short stop in Vaduz, Liechtenstein, before arriving in glamorous St. Moritz.", "image": "https://images.unsplash.com/photo-1601135832223-74a4805878d2?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                { day: 7, "date": "31-July", "title": "Italian Alps & Sunset Views", "details": "Optional day trip to Livigno, Italy. Explore Bernina Pass and take the Muottas Muragl funicular for a spectacular sunset.", "image": "https://images.unsplash.com/photo-1593361748234-a162d4e68f3a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                { day: 8, "date": "1-August", "title": "Scenic Drive to Interlaken", "details": "A beautiful transfer through alpine villages and stunning valleys to Interlaken. Check in at Grand Hotel Beau Rivage.", "image": "https://images.unsplash.com/photo-1613643033589-32281d2a71f0?q=80&w=2662&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                { day: 9, "date": "2-August", "title": "Top of Europe & Sunset", "details": "Journey to Jungfraujoch – Top of Europe. In the evening, ascend Harder Kulm for sunset views over Interlaken.", "image": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                { day: 10, "date": "3-August", "title": "Waterfalls & Alpine Villages", "details": "Visit Lauterbrunnen Valley to see Staubbach Falls. Optional visits to Trümmelbach Falls and the charming village of Wengen.", "image": "https://images.unsplash.com/photo-1519098904321-27938367f8e8?q=80&w=2576&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                { day: 11, "date": "4-August", "title": "Glacier Wonders & Lucerne", "details": "Ascend Mt. Titlis via the Rotair cable car. Arrive in Lucerne and see the illuminated Chapel Bridge at night.", "image": "https://images.unsplash.com/photo-1565183808198-5755146b281f?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                { day: 12, "date": "5-August", "title": "Mt. Pilatus & City Sights", "details": "Ride the world's steepest cogwheel railway up Mt. Pilatus. Explore Lucerne's Old Town and enjoy an optional lake cruise.", "image": "https://images.unsplash.com/photo-1572522201995-1839e5576a4e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                { day: 13, "date": "6-August", "title": "Departure", "details": "Enjoy a final Swiss breakfast before your private transfer to Zurich Airport for your flight home. Safe travels!", "image": "https://images.unsplash.com/photo-1512481844392-a2f65a4b5a26?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+            ];
+            
+            const hotelsData = [
+                { name: "Radisson Hotel, Zurich", location: "Zurich", image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2670&auto=format&fit=crop" },
+                { name: "Royal Plaza, Montreux", location: "Montreux", image: "https://images.unsplash.com/photo-1542314831-068cd1dbb5eb?q=80&w=2670&auto=format&fit=crop" },
+                { name: "Naco Aparthotel, Zermatt", location: "Zermatt", image: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2670&auto=format&fit=crop" },
+                { name: "Hotel Laudinella, St. Moritz", location: "St. Moritz", image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2525&auto=format&fit=crop" },
+                { name: "Grand Hotel Beau Rivage", location: "Interlaken", image: "https://images.unsplash.com/photo-1596436889106-be35e843f974?q=80&w=2670&auto=format&fit=crop" },
+                { name: "Radisson Blu, Lucerne", location: "Lucerne", image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2670&auto=format&fit=crop" },
+            ];
+
+            const timelineContainer = document.getElementById('timelineContainer');
+            itineraryData.forEach((item, index) => {
+                const isLeft = index % 2 === 0;
+                const timelineItem = `
+                    <div class="relative timeline-item">
+                        <div class="absolute w-6 h-6 bg-amber-500 rounded-full top-3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-white font-bold">${item.day}</div>
+                        <div class="grid grid-cols-1 ${isLeft ? 'md:grid-cols-2' : ''}">
+                            <div class="${isLeft ? 'md:col-start-1 md:text-right' : 'md:col-start-2'}">
+                                <div class="cursor-pointer p-4 rounded-xl my-2 ml-auto shadow-lg bg-white border border-gray-100 w-full md:w-11/12">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <p class="text-amber-600 text-sm font-semibold">${item.date}</p>
+                                            <h3 class="text-xl font-display text-emerald-800">${item.title}</h3>
+                                        </div>
+                                        <div class="arrow-down transition-transform duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item-content text-left">
+                                        <div class="mt-4 border-t pt-4">
+                                            <img src="${item.image}" alt="${item.title}" class="w-full h-48 object-cover rounded-lg mb-4" onerror="this.src='https://placehold.co/600x400/cccccc/000000?text=${encodeURIComponent(item.title)}'; this.onerror=null;">
+                                            <p class="text-gray-600">${item.details}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                timelineContainer.innerHTML += timelineItem;
+            });
+            
+            const hotelsContainer = document.querySelector('#hotels .grid');
+            hotelsData.forEach(hotel => {
+                const hotelCard = `
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 group">
+                        <img class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-300" src="${hotel.image}" alt="${hotel.name}" onerror="this.src='https://placehold.co/600x400/cccccc/000000?text=${encodeURIComponent(hotel.name)}'; this.onerror=null;">
+                        <div class="p-6">
+                            <h3 class="font-display text-xl text-emerald-800">${hotel.name}</h3>
+                            <p class="text-gray-600">${hotel.location}</p>
+                        </div>
+                    </div>
+                `;
+                hotelsContainer.innerHTML += hotelCard;
+            });
+
+            document.querySelectorAll('.timeline-item .cursor-pointer').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const parentItem = e.currentTarget.closest('.timeline-item');
+                    parentItem.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
